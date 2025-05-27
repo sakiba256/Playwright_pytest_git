@@ -17,7 +17,7 @@ def page() -> Generator[Page, None, None]:
     chrome_path = get_chrome_path()
     with sync_playwright() as p:
         browser = p.chromium.launch(
-            headless=False,
+            headless=True,
             executable_path=chrome_path
         )
         page = browser.new_page()
